@@ -1,0 +1,8 @@
+.btn-theme{
+  color: $color-text;
+  background-color: $theme;
+  &:hover{
+    color: $color-text;
+    background-color: darken($theme, 4%);
+  }
+}

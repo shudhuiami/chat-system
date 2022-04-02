@@ -1,0 +1,16 @@
+.bg-soft-light{
+  background-color: rgba(54,64,74,.25);
+}
+.border-light{
+  border-color: #36404a!important;
+}
+a{
+  text-decoration: none;
+  color: $theme!important;
+  transition: all .2s ease;
+  cursor: pointer;
+  &:hover{
+    transition: all .2s ease;
+    color: darken($theme, 4%)!important;
+  }
+}
