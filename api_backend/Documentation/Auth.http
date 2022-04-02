@@ -1,0 +1,28 @@
+//Registration
+POST http://localhost:3000/app/v1/secure/registration
+Content-Type: application/json
+
+{
+  "name": "Ahmed Zobayer",
+  "email": "zobayer.mee@gmail.com",
+  "username": "shudhuiami",
+  "password": "123asd123"
+}
+###
+
+//Login
+POST http://localhost:3000/app/v1/secure/login
+Content-Type: application/json
+
+{
+  "username": "shudhuiami",
+  "password": "123asd123"
+}
+###
+
+//Get all users
+GET http://localhost:3000/app/v1/secure/users
+Content-Type: application/json
+
+###
+
