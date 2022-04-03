@@ -17,5 +17,9 @@ body{
 /*Auth*/
 @import "auth/auth";
 
+/*Includes*/
+@import "includes/side-menu";
+@import "includes/side-chats";
+
 /*Pages*/
 @import "pages/404";

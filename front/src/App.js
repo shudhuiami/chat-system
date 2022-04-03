@@ -15,7 +15,7 @@ import {Register} from "./components/auth/register";
 import Reset from "./components/auth/reset";
 
 // Front Pages
-import {Home} from "./components/pages/home";
+import {Dashboard} from "./components/pages/dashboard";
 import {PageNotFound} from "./components/pages/pageNotFound";
 
 const AppRoute = ({component:Component,layout:Layout, ...rest}) => (
@@ -34,7 +34,7 @@ function App(){
                         <AppRoute path={'/reset'} exact layout={Auth} component={Reset} />
 
                         {/*Front Routes*/}
-                        <AppRoute path={'/home'} exact layout={Front} component={Home} />
+                        <AppRoute path={'/dashboard'} exact layout={Front} component={Dashboard} />
                         <AppRoute layout={Front}  component={PageNotFound} />
                     </Switch>
                 </Router>

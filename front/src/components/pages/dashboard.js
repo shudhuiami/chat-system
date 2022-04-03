@@ -3,12 +3,10 @@ import React, {Component} from "react";
 /*IMAGES*/
 
 
-export  class Home extends Component {
+export  class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {};
-
-
     }
     componentDidMount() {
 
@@ -21,4 +19,4 @@ export  class Home extends Component {
         );
     }
 }
-export default Home
+export default Dashboard
