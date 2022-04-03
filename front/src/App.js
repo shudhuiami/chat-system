@@ -17,6 +17,7 @@ import Reset from "./components/auth/reset";
 // Front Pages
 import {Dashboard} from "./components/pages/dashboard";
 import {PageNotFound} from "./components/pages/pageNotFound";
+import UserChat from "./components/pages/userChat";
 
 const AppRoute = ({component:Component,layout:Layout, ...rest}) => (
     <Route {...rest} render={props => (
@@ -35,6 +36,7 @@ function App(){
 
                         {/*Front Routes*/}
                         <AppRoute path={'/dashboard'} exact layout={Front} component={Dashboard} />
+                        <AppRoute path={'/chat'} exact layout={Front} component={UserChat} />
                         <AppRoute layout={Front}  component={PageNotFound} />
                     </Switch>
                 </Router>

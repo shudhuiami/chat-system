@@ -13,8 +13,8 @@ export  class Dashboard extends Component {
     }
     render() {
         return (
-            <div>
-                <h1>Home</h1>
+            <div className={'dashboard'}>
+                <h1>Dashboard</h1>
             </div>
         );
     }

@@ -12,17 +12,20 @@ export  class Front extends Component {
     changeSelected = (val) => {
         this.setState({selected: val})
     }
-
-    componentDidMount() {
-
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log(this.state.selected, 'selected')
     }
+
+    componentDidMount() {}
     render() {
         return (
             <React.Fragment>
                 <div className={'layout-wrapper d-lg-flex'}>
                     <SideMenu changeSelected = {(val)=> {this.changeSelected(val)}} />
                     <SideChats selected={this.state.selected} />
-                    {this.props.children}
+                    <div className={'wrap w-100 overflow-hidden'}>
+                        {this.props.children}
+                    </div>
                 </div>
             </React.Fragment>
         );

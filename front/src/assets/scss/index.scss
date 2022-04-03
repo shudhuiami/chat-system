@@ -16,10 +16,18 @@ body{
 }
 /*Auth*/
 @import "auth/auth";
+.layout-wrapper{
+  /*Includes*/
+  @import "includes/side-menu";
+  @import "includes/side-chats";
 
-/*Includes*/
-@import "includes/side-menu";
-@import "includes/side-chats";
-
-/*Pages*/
-@import "pages/404";
+  .wrap{
+    background-color: #262e35;
+    box-shadow: 0 2px 4px rgba(15, 34, 58, .12);
+    transition: all .4s;
+    /*Pages*/
+    @import "pages/404";
+    @import "pages/dashboard";
+    @import "pages/user-chat";
+  }
+}

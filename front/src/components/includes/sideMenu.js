@@ -9,7 +9,7 @@ export  class SideMenu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tab:1
+            tab:2
         };
     }
      handleClick (val)  {
@@ -41,11 +41,6 @@ export  class SideMenu extends Component {
                         <li className={'nav-item'}>
                             <a className={'nav-link' + (this.state.tab === 3 ? ' active' : '')} onClick={() => this.handleClick(3)}>
                                 <Icon icon="ri:group-line" className={'nav-icon'} width={'20'} height={'20'} />
-                            </a>
-                        </li>
-                        <li className={'nav-item'}>
-                            <a className={'nav-link' + (this.state.tab === 4 ? ' active' : '')} onClick={() => this.handleClick(4)}>
-                                <Icon icon="ri:contacts-line" className={'nav-icon'} width={'20'} height={'20'} />
                             </a>
                         </li>
                         <li className={'nav-item'}>
