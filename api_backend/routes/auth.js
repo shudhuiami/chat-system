@@ -8,5 +8,4 @@ AuthRoutes.post('/registration', async (request, response) => AuthController.Reg
 //user Login
 AuthRoutes.post('/login', async (request, response) => AuthController.Login(request, response))
 
-
 export default AuthRoutes;
