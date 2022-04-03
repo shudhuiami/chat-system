@@ -23,6 +23,11 @@ app.use(express.json())
 import AuthRoutes from './routes/auth.js';
 app.use('/app/v1/secure', AuthRoutes);
 
+import UsersRoutes from './routes/users.js';
+app.use('/app/v1/users', UsersRoutes);
+
+
+
 
 app.listen(port, (error) => {
     if(error){
