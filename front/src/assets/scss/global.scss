@@ -66,3 +66,9 @@ a{
     opacity: 1;
   }
 }
+.px-4{
+  @media screen and (max-width: 991px){
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+  }
+}

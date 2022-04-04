@@ -173,6 +173,9 @@
       display: block;
       position: relative;
       width: 70px;
+      @media screen and (max-width: 991px){
+        width: 25%;
+      }
       .chat-user-img{
         position: absolute;
         top: -14px;
@@ -209,6 +212,9 @@
     justify-content: flex-start;
     align-content: flex-start;
     align-items: flex-start;
+    @media screen and (max-width: 991px){
+      height: calc(100vh - 334px);
+    }
     .simplebar-content-wrapper{
       height: 100%;
       overflow: auto!important;

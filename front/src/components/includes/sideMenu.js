@@ -48,6 +48,13 @@ export  class SideMenu extends Component {
                                 <Icon icon="ri:settings-2-line" className={'nav-icon'} width={'20'} height={'20'} />
                             </a>
                         </li>
+                        <li className={'nav-item has-image'}>
+                            <a className={'nav-link has-image'}>
+                                <span className="user-image">
+                                    <img src={userImage} alt=""/>
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div className={'flex-lg-column d-none d-lg-block'}>
