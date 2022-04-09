@@ -1,7 +1,60 @@
-//Registration
+//Get Users List
 GET http://localhost:3030/app/v1/users/all
 Content-Type: application/json
+token: aqmWaDDJIJ38LQLKGyWBBcW8DJrRQ-CyZ7NMssN7ibxygpEclEFhptadtGgSn2gO
+###
+
+//Send Request
+POST http://localhost:3030/app/v1/users/request/sent
+Content-Type: application/json
+token: aqmWaDDJIJ38LQLKGyWBBcW8DJrRQ-CyZ7NMssN7ibxygpEclEFhptadtGgSn2gO
+
+{
+  "receiver_id": "6251c952ffbc3f9002e9609c"
+}
 
 ###
+
+//All Connections
+GET http://localhost:3030/app/v1/users/connections/all
+Content-Type: application/json
+token: aqmWaDDJIJ38LQLKGyWBBcW8DJrRQ-CyZ7NMssN7ibxygpEclEFhptadtGgSn2gO
+
+
+###
+
+//Received Requests
+GET http://localhost:3030/app/v1/users/request/received/all
+Content-Type: application/json
+token: aqmWaDDJIJ38LQLKGyWBBcW8DJrRQ-CyZ7NMssN7ibxygpEclEFhptadtGgSn2gO
+
+
+###
+
+
+//Sent Requests
+GET http://localhost:3030/app/v1/users/request/sent/all
+Content-Type: application/json
+token: aqmWaDDJIJ38LQLKGyWBBcW8DJrRQ-CyZ7NMssN7ibxygpEclEFhptadtGgSn2gO
+
+
+###
+
+//Sent Requests
+POST http://localhost:3030/app/v1/users/request/status
+Content-Type: application/json
+token: aqmWaDDJIJ38LQLKGyWBBcW8DJrRQ-CyZ7NMssN7ibxygpEclEFhptadtGgSn2gO
+
+{
+  "connection_id": "6251f7c437861c15e02def9b",
+  "status": 2
+}
+
+###
+
+
+
+
+
 
 

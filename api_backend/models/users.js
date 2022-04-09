@@ -39,6 +39,6 @@ const usersSchema = new mongoose.Schema({
     token: {
         type: String,
     }
-})
+});
 let Users = mongoose.model('Users', usersSchema);
 export default Users;
