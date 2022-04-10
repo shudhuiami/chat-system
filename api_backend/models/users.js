@@ -5,6 +5,9 @@ const usersSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    avatar: {
+        type: String,
+    },
     email: {
         type: String,
         required: true,
@@ -36,6 +39,6 @@ const usersSchema = new mongoose.Schema({
     token: {
         type: String,
     }
-})
+});
 let Users = mongoose.model('Users', usersSchema);
 export default Users;
