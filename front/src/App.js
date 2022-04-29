@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react";
+import {Route, BrowserRouter as Router, BrowserRouter, Link} from 'react-router-dom'
+import {Switch} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// StyleSheet
+import './assets/scss/index.scss';
+
+// Layouts
+import Auth from "./components/layout/auth";
+import Front from "./components/layout/front";
+
+// Auth Pages
+import Login from "./components/auth/login";
+import {Register} from "./components/auth/register";
+import Reset from "./components/auth/reset";
+
+// Front Pages
+import {Dashboard} from "./components/pages/dashboard";
+import {PageNotFound} from "./components/pages/pageNotFound";
+import UserChat from "./components/pages/userChat";
+
+const AppRoute = ({component:Component,layout:Layout, ...rest}) => (
+    <Route {...rest} render={props => (
+        <Layout><Component {...props} /></Layout>
+    )}/>
+)
+function App(){
+    return (
+        <BrowserRouter>
+                <Router>
+                    <Switch>
+                        {/*Auth Routes*/}
+                        <AppRoute path={'/'} exact layout={Auth} component={Login} />
+                        <AppRoute path={'/Register'} exact layout={Auth} component={Register} />
+                        <AppRoute path={'/reset'} exact layout={Auth} component={Reset} />
+
+                        {/*Front Routes*/}
+                        <AppRoute path={'/dashboard'} exact layout={Front} component={Dashboard} />
+                        <AppRoute path={'/chat'} exact layout={Front} component={UserChat} />
+                        <AppRoute layout={Front}  component={PageNotFound} />
+                    </Switch>
+                </Router>
+        </BrowserRouter>
+    );
 }
 
 export default App;

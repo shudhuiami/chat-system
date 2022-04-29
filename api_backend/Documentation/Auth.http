@@ -1,17 +1,17 @@
 //Registration
-POST http://localhost:3000/app/v1/secure/registration
+POST http://localhost:3030/app/v1/secure/registration
 Content-Type: application/json
 
 {
-  "name": "Ahmed Zobayer",
-  "email": "zobayer.mee@gmail.com",
-  "username": "shudhuiami",
+  "name": "ridwan",
+  "email": "ridwan@gmail.com",
+  "username": "ridwan",
   "password": "123asd123"
 }
 ###
 
 //Login
-POST http://localhost:3000/app/v1/secure/login
+POST http://localhost:3030/app/v1/secure/login
 Content-Type: application/json
 
 {
