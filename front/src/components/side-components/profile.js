@@ -8,7 +8,32 @@ import userImage from '../../assets/images/user.png'
 export  class Profile extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            Collapse:{
+                about:false,
+                files:false,
+            }
+        };
+    }
+    toggleCollapse(type){
+        let collapse = this.state.Collapse
+        if(type === 1){
+            if(collapse.about === false){
+                collapse.about = true
+                collapse.files = false
+            }else{
+                collapse.about = false
+            }
+        }
+        if(type === 2){
+            if(collapse.files === false){
+                collapse.files = true
+                collapse.about = false
+            }else{
+                collapse.files = false
+            }
+        }
+        this.setState({Collapse:collapse})
     }
     render() {
         return (
@@ -27,7 +52,7 @@ export  class Profile extends Component {
                 <div className={'text-center p-4 border-bottom'}>
                     <div className={'mb-4 profile-user'}>
                         <img src={userImage} alt="" className={'rounded-circle avatar-lg img-thumbnail'}/>
-                        <button type="button"className="btn bg-light avatar-xs p-0 rounded-circle profile-photo-edit">
+                        <button type="button" className="btn bg-light avatar-xs p-0 rounded-circle profile-photo-edit">
                             <Icon icon="ri:pencil-fill" className={'nav-icon'}  width={'20'} height={'20'} />
                         </button>
                     </div>
@@ -44,7 +69,7 @@ export  class Profile extends Component {
                             the individual.</p>
                     </div>
                     <div className={'custom-accordion'}>
-                        <div className="custom-accordion-header">
+                        <div className="custom-accordion-header" onClick={() => this.toggleCollapse(1)}>
                             <div>
                                 <Icon icon="ri:user-2-line" className={'nav-icon'}  width={'18'} height={'18'} />
                                 <span>About</span>
@@ -53,7 +78,7 @@ export  class Profile extends Component {
                                 <Icon icon="akar-icons:chevron-right" color="#a6b0cf" width="12" height="12" />
                             </div>
                         </div>
-                        <div className="custom-accordion-body">
+                        <div className={'custom-accordion-body' + (this.state.Collapse.about === true ? ' active' : '')}>
                             <div>
                                 <p className="text-muted mb-1"> Name </p>
                                 <h5 className="font-size-14"> Patricia Smith </h5>
@@ -73,7 +98,7 @@ export  class Profile extends Component {
                         </div>
                     </div>
                     <div className={'custom-accordion'}>
-                        <div className="custom-accordion-header">
+                        <div className="custom-accordion-header"  onClick={() => this.toggleCollapse(2)}>
                             <div>
                                 <Icon icon="ri:attachment-line" className={'nav-icon me-2 align-middle d-inline-block'}  width={'18'} height={'18'} />
                                 <span> Attached Files </span>
@@ -82,7 +107,7 @@ export  class Profile extends Component {
                                 <Icon icon="akar-icons:chevron-right" color="#a6b0cf" width="12" height="12" />
                             </div>
                         </div>
-                        <div className="custom-accordion-body ">
+                        <div  className={'custom-accordion-body' + (this.state.Collapse.files === true ? ' active' : '')}>
                             <div className={'each-attachment p-2  mb-2'}>
                                 <div className={'media align-items-center'}>
                                     <div className={'avatar-sm me-3'}>

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { Icon } from '@iconify/react';
 import {  NavLink} from 'react-router-dom'
+import config from '../../config'
 
 /*IMAGES*/
 
@@ -8,13 +9,33 @@ import {  NavLink} from 'react-router-dom'
 export  class Login extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
-
-
+        this.state = {
+            isLoaded:false,
+            param:{
+                name:'',
+                email:'',
+                username:'',
+                password:'',
+            }
+        };
     }
-    componentDidMount() {
 
+    async Register(){
+        try{
+            let result  = await fetch(config.info.APP_URL+'/'+config.info.VERSION + '/secure/registration', {
+               method:'post',
+               mode:'no-cors',
+               headers:{
+                   'Accept': 'application/json',
+                   'Content-type': 'application/json'
+               },
+               body:this.state.param
+            });
+        } catch (error){
+            console.log(error)
+        }
     }
+    componentDidMount() {}
     render() {
         return (
             <div>

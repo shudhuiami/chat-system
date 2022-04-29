@@ -44,3 +44,31 @@ a{
 .text-primary{
   color: $theme!important;
 }
+
+// webkit scrollbar
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 5px !important;
+  height: 2px !important;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6C7680 !important;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #f6f6f6;
+    opacity: 1;
+  }
+}
+.px-4{
+  @media screen and (max-width: 991px){
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+  }
+}

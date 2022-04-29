@@ -177,6 +177,222 @@ export  class ChatList extends Component {
                                             </div>
                                         </NavLink>
                                     </li>
+                                    <li>
+                                        <NavLink to={'chat'} >
+                                            <div className="media">
+                                                <div className={'chat-user-img online align-self-center me-3'}>
+                                                    <div>
+                                                        <img src={demoUser1} className={'rounded-circle avatar-xs'} alt=""/>
+                                                        <span className="user-status"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div className={'media-body overflow-hidden'}>
+                                                    <h5 className={'text-truncate font-size-15 mb-1'}> Patrick Hendricks </h5>
+                                                    <p className="chat-user-message text-truncate mb-0"> Hey! there I'm available </p>
+                                                </div>
+                                                <div  className="font-size-11 text-truncate">05 min</div>
+                                            </div>
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to={'chat'} >
+                                            <div className="media">
+                                                <div className={'chat-user-img online align-self-center me-3'}>
+                                                    <div>
+                                                        <img src={userImage} className={'rounded-circle avatar-xs'} alt=""/>
+                                                        <span className="user-status"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div className={'media-body overflow-hidden'}>
+                                                    <h5 className={'text-truncate font-size-15 mb-1'}> John Doe </h5>
+                                                    <p className="chat-user-message text-truncate mb-0"> Hey! there I'm available </p>
+                                                </div>
+                                                <div  className="font-size-11 text-truncate">05 min</div>
+                                            </div>
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to={'chat'} >
+                                            <div className="media">
+                                                <div className={'chat-user-img online align-self-center me-3'}>
+                                                    <div>
+                                                        <img src={demoUser1} className={'rounded-circle avatar-xs'} alt=""/>
+                                                        <span className="user-status"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div className={'media-body overflow-hidden'}>
+                                                    <h5 className={'text-truncate font-size-15 mb-1'}> Patrick Hendricks </h5>
+                                                    <p className="chat-user-message text-truncate mb-0"> Hey! there I'm available </p>
+                                                </div>
+                                                <div  className="font-size-11 text-truncate">05 min</div>
+                                            </div>
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to={'chat'} >
+                                            <div className="media">
+                                                <div className={'chat-user-img online align-self-center me-3'}>
+                                                    <div>
+                                                        <img src={userImage} className={'rounded-circle avatar-xs'} alt=""/>
+                                                        <span className="user-status"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div className={'media-body overflow-hidden'}>
+                                                    <h5 className={'text-truncate font-size-15 mb-1'}> John Doe </h5>
+                                                    <p className="chat-user-message text-truncate mb-0"> Hey! there I'm available </p>
+                                                </div>
+                                                <div  className="font-size-11 text-truncate">05 min</div>
+                                            </div>
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to={'chat'} >
+                                            <div className="media">
+                                                <div className={'chat-user-img online align-self-center me-3'}>
+                                                    <div>
+                                                        <img src={demoUser1} className={'rounded-circle avatar-xs'} alt=""/>
+                                                        <span className="user-status"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div className={'media-body overflow-hidden'}>
+                                                    <h5 className={'text-truncate font-size-15 mb-1'}> Patrick Hendricks </h5>
+                                                    <p className="chat-user-message text-truncate mb-0"> Hey! there I'm available </p>
+                                                </div>
+                                                <div  className="font-size-11 text-truncate">05 min</div>
+                                            </div>
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to={'chat'} >
+                                            <div className="media">
+                                                <div className={'chat-user-img online align-self-center me-3'}>
+                                                    <div>
+                                                        <img src={userImage} className={'rounded-circle avatar-xs'} alt=""/>
+                                                        <span className="user-status"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div className={'media-body overflow-hidden'}>
+                                                    <h5 className={'text-truncate font-size-15 mb-1'}> John Doe </h5>
+                                                    <p className="chat-user-message text-truncate mb-0"> Hey! there I'm available </p>
+                                                </div>
+                                                <div  className="font-size-11 text-truncate">05 min</div>
+                                            </div>
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to={'chat'} >
+                                            <div className="media">
+                                                <div className={'chat-user-img online align-self-center me-3'}>
+                                                    <div>
+                                                        <img src={demoUser1} className={'rounded-circle avatar-xs'} alt=""/>
+                                                        <span className="user-status"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div className={'media-body overflow-hidden'}>
+                                                    <h5 className={'text-truncate font-size-15 mb-1'}> Patrick Hendricks </h5>
+                                                    <p className="chat-user-message text-truncate mb-0"> Hey! there I'm available </p>
+                                                </div>
+                                                <div  className="font-size-11 text-truncate">05 min</div>
+                                            </div>
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to={'chat'} >
+                                            <div className="media">
+                                                <div className={'chat-user-img online align-self-center me-3'}>
+                                                    <div>
+                                                        <img src={userImage} className={'rounded-circle avatar-xs'} alt=""/>
+                                                        <span className="user-status"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div className={'media-body overflow-hidden'}>
+                                                    <h5 className={'text-truncate font-size-15 mb-1'}> John Doe </h5>
+                                                    <p className="chat-user-message text-truncate mb-0"> Hey! there I'm available </p>
+                                                </div>
+                                                <div  className="font-size-11 text-truncate">05 min</div>
+                                            </div>
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to={'chat'} >
+                                            <div className="media">
+                                                <div className={'chat-user-img online align-self-center me-3'}>
+                                                    <div>
+                                                        <img src={demoUser1} className={'rounded-circle avatar-xs'} alt=""/>
+                                                        <span className="user-status"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div className={'media-body overflow-hidden'}>
+                                                    <h5 className={'text-truncate font-size-15 mb-1'}> Patrick Hendricks </h5>
+                                                    <p className="chat-user-message text-truncate mb-0"> Hey! there I'm available </p>
+                                                </div>
+                                                <div  className="font-size-11 text-truncate">05 min</div>
+                                            </div>
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to={'chat'} >
+                                            <div className="media">
+                                                <div className={'chat-user-img online align-self-center me-3'}>
+                                                    <div>
+                                                        <img src={userImage} className={'rounded-circle avatar-xs'} alt=""/>
+                                                        <span className="user-status"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div className={'media-body overflow-hidden'}>
+                                                    <h5 className={'text-truncate font-size-15 mb-1'}> John Doe </h5>
+                                                    <p className="chat-user-message text-truncate mb-0"> Hey! there I'm available </p>
+                                                </div>
+                                                <div  className="font-size-11 text-truncate">05 min</div>
+                                            </div>
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to={'chat'} >
+                                            <div className="media">
+                                                <div className={'chat-user-img online align-self-center me-3'}>
+                                                    <div>
+                                                        <img src={demoUser1} className={'rounded-circle avatar-xs'} alt=""/>
+                                                        <span className="user-status"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div className={'media-body overflow-hidden'}>
+                                                    <h5 className={'text-truncate font-size-15 mb-1'}> Patrick Hendricks </h5>
+                                                    <p className="chat-user-message text-truncate mb-0"> Hey! there I'm available </p>
+                                                </div>
+                                                <div  className="font-size-11 text-truncate">05 min</div>
+                                            </div>
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to={'chat'} >
+                                            <div className="media">
+                                                <div className={'chat-user-img online align-self-center me-3'}>
+                                                    <div>
+                                                        <img src={userImage} className={'rounded-circle avatar-xs'} alt=""/>
+                                                        <span className="user-status"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div className={'media-body overflow-hidden'}>
+                                                    <h5 className={'text-truncate font-size-15 mb-1'}> John Doe </h5>
+                                                    <p className="chat-user-message text-truncate mb-0"> Hey! there I'm available </p>
+                                                </div>
+                                                <div  className="font-size-11 text-truncate">05 min</div>
+                                            </div>
+                                        </NavLink>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
