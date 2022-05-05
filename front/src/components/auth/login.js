@@ -12,15 +12,23 @@ export  class Login extends Component {
         this.state = {
             isLoaded:false,
             param:{
-                name:'',
                 email:'',
-                username:'',
                 password:'',
             }
         };
     }
-
-    async Register(){
+    changeHandler = (event, type) => {
+        let param = this.state.param;
+         if(type === 'email') {
+            param.email = event.target.value;
+        }else if(type === 'password') {
+            param.password = event.target.value;
+        }
+        this.setState({
+            param: param
+        })
+    }
+    async Login(){
         try{
             let result  = await fetch(config.info.APP_URL+'/'+config.info.VERSION + '/secure/registration', {
                method:'post',
@@ -55,7 +63,7 @@ export  class Login extends Component {
                                             <Icon icon="ant-design:mail-outlined" color="#9aa1b9" width="16" height="16" />
                                         </span>
                                     </div>
-                                    <input type="email" placeholder="Enter your email" className="form-control bg-soft-light border-light"/>
+                                    <input type="email" value={this.state.email} onChange={(e) => this.changeHandler(e, 'email')} placeholder="Enter your email" className="form-control bg-soft-light border-light"/>
                                     <div className="invalid-feedback">Email is mandatory.</div>
                                 </div>
                             </div>
@@ -70,7 +78,7 @@ export  class Login extends Component {
                                             <Icon icon="ant-design:lock-outlined" color="#9aa1b9" width="16" height="16" />
                                         </span>
                                     </div>
-                                    <input type="password" placeholder="Enter your password" className="form-control bg-soft-light border-light"/>
+                                    <input type="password" value={this.state.password} onChange={(e) => this.changeHandler(e, 'password')} placeholder="Enter your password" className="form-control bg-soft-light border-light"/>
                                     <div className="invalid-feedback">Password is mandatory.</div>
                                 </div>
                             </div>
