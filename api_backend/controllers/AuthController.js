@@ -32,7 +32,7 @@ const AuthController = {
                     if(check === true){
                         let token = nanoid(64);
                         await Users.findOneAndUpdate({username: input.username}, {token: token});
-                        response.status(200).json({status: 200, message: 'Login successful'});
+                        response.status(200).json({status: 200,token: token, message: 'Login successful'});
                     }else{
                         response.status(200).json({status: 500, message: 'Invalid Credentials'});
                     }

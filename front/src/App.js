@@ -35,6 +35,7 @@ function App(){
                         <AppRoute path={'/reset'} exact layout={Auth} component={Reset} />
 
                         {/*Front Routes*/}
+
                         <AppRoute path={'/dashboard'} exact layout={Front} component={Dashboard} />
                         <AppRoute path={'/chat'} exact layout={Front} component={UserChat} />
                         <AppRoute layout={Front}  component={PageNotFound} />

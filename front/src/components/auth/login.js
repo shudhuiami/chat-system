@@ -1,26 +1,25 @@
 import React, {Component} from "react";
 import { Icon } from '@iconify/react';
-import {  NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import config from '../../config'
-
-/*IMAGES*/
-
+import $ from "jquery";
 
 export  class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isLoaded:false,
+            isError:false,
             param:{
-                email:'',
+                username:'',
                 password:'',
             }
         };
     }
     changeHandler = (event, type) => {
         let param = this.state.param;
-         if(type === 'email') {
-            param.email = event.target.value;
+         if(type === 'username') {
+            param.username = event.target.value;
         }else if(type === 'password') {
             param.password = event.target.value;
         }
@@ -28,21 +27,41 @@ export  class Login extends Component {
             param: param
         })
     }
-    async Login(){
+    Login = (event) => {
+        this.setState({isLoaded:true})
+        this.setState({isError:false})
+        event.preventDefault()
         try{
-            let result  = await fetch(config.info.APP_URL+'/'+config.info.VERSION + '/secure/registration', {
-               method:'post',
-               mode:'no-cors',
-               headers:{
-                   'Accept': 'application/json',
-                   'Content-type': 'application/json'
-               },
-               body:this.state.param
-            });
+             fetch('http://localhost:3030/app/v1/secure/login', {
+                method:'post',
+                headers:{
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify(this.state.param)
+            }) .then(response => response.json())
+                .then(data => {
+                    this.setState({isLoaded:false})
+                    if(data.status === 200){
+                        this.setState({successMsg:true})
+                        this.setState({isLoaded:false})
+                        let param = {
+                            email:'',
+                            password:'',
+                        }
+                        this.props.history.push('/dashboard')
+                        this.setState({param:param})
+                        sessionStorage.setItem("AUTH_TOKEN", JSON.stringify(data.token));
+                    }else{
+                        this.setState({isLoaded:false})
+                        this.setState({isError:true})
+                    }
+                });
         } catch (error){
             console.log(error)
         }
     }
+
     componentDidMount() {}
     render() {
         return (
@@ -53,18 +72,26 @@ export  class Login extends Component {
                 </div>
                 <div className={'card'}>
                 <div className="card-body p-4">
-                    <div className={'p-3'}>
-                        <form>
+                    <div className={'p-3'} >
+                        {this.state.isError ? (
+                            <div className="alert alert-danger text-center" role="alert">
+                                Invalid Credentials
+                            </div>
+                        ) : (
+                            ''
+                        )}
+
+                        <form  onSubmit={this.Login}>
                             <div className="form-group">
-                                <label>Email</label>
+                                <label>Username</label>
                                 <div className="input-group mb-3 bg-soft-light input-group-lg rounded-lg">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text border-light text-muted">
-                                            <Icon icon="ant-design:mail-outlined" color="#9aa1b9" width="16" height="16" />
+                                                    <Icon icon="ant-design:user-outlined" color="#9aa1b9" width="16" height="16" />
                                         </span>
                                     </div>
-                                    <input type="email" value={this.state.email} onChange={(e) => this.changeHandler(e, 'email')} placeholder="Enter your email" className="form-control bg-soft-light border-light"/>
-                                    <div className="invalid-feedback">Email is mandatory.</div>
+                                    <input type="text" value={this.state.username} onChange={(e) => this.changeHandler(e, 'username')} placeholder="Enter your username" className="form-control bg-soft-light border-light"/>
+
                                 </div>
                             </div>
                             <div className="form-group mb-4">
@@ -79,11 +106,13 @@ export  class Login extends Component {
                                         </span>
                                     </div>
                                     <input type="password" value={this.state.password} onChange={(e) => this.changeHandler(e, 'password')} placeholder="Enter your password" className="form-control bg-soft-light border-light"/>
-                                    <div className="invalid-feedback">Password is mandatory.</div>
+
                                 </div>
                             </div>
                             <div className=" d-grid gap-2">
-                                <button className="btn btn-theme btn-block">Sign In</button>
+                                <button className="btn btn-theme btn-block" disabled={this.state.isLoaded === true}>
+                                    {this.state.isLoaded  === false? `Sign In` :   <Icon icon="eos-icons:loading" color="#a6b0cf" width="20" height="20" />}
+                                </button>
                             </div>
                         </form>
                     </div>

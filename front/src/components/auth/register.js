@@ -12,6 +12,7 @@ export  class Register extends Component {
         super(props);
         this.state = {
             isLoaded:false,
+            isError:false,
             successMsg:false,
             param: {
                 name:'',
@@ -64,6 +65,7 @@ export  class Register extends Component {
                         this.setState({param:param})
                     }else{
                         this.setState({isLoaded:false})
+                        this.ErrorHandler(data.message)
                     }
                 });
         } catch (error){
@@ -71,10 +73,12 @@ export  class Register extends Component {
         }
     }
 
-    ErrorHandler = (error) => {
-        error.forEach((v, i) =>{
-            $('[name=' + i + ']').closest('.form-group').find('.invalid-feedback').html(v);
-        })
+   ErrorHandler = (error) => {
+       $.each(error, function (i, v) {
+           $('[name=' + i + ']').closest('.input-group').find('.invalid-feedback').html(v.message);
+       })
+
+
 
     }
     render() {
@@ -96,7 +100,7 @@ export  class Register extends Component {
                                                     <Icon icon="ant-design:user-outlined" color="#9aa1b9" width="16" height="16" />
                                                 </span>
                                             </div>
-                                            <input type="text" value={this.state.name}  onChange={(e) => this.changeHandler(e, 'name')} placeholder="Enter your name" className="form-control bg-soft-light border-light"/>
+                                            <input type="text" value={this.state.name}  onChange={(e) => this.changeHandler(e, 'name')} name={'name'} placeholder="Enter your name" className="form-control bg-soft-light border-light"/>
                                             <div className="invalid-feedback d-block text-danger"></div>
                                         </div>
                                     </div>
@@ -108,7 +112,7 @@ export  class Register extends Component {
                                                     <Icon icon="ant-design:user-outlined" color="#9aa1b9" width="16" height="16" />
                                                 </span>
                                             </div>
-                                            <input type="text" value={this.state.username}  onChange={(e) => this.changeHandler(e, 'username')} placeholder="Enter your username" className="form-control bg-soft-light border-light"/>
+                                            <input type="text" value={this.state.username}  name={'username'}  onChange={(e) => this.changeHandler(e, 'username')} placeholder="Enter your username" className="form-control bg-soft-light border-light"/>
                                             <div className="invalid-feedback d-block text-danger"></div>
                                         </div>
                                     </div>
@@ -120,7 +124,7 @@ export  class Register extends Component {
                                             <Icon icon="ant-design:mail-outlined" color="#9aa1b9" width="16" height="16" />
                                         </span>
                                             </div>
-                                            <input type="email" placeholder="Enter your email"  value={this.state.email} onChange={(e) => this.changeHandler(e, 'email')} className="form-control bg-soft-light border-light"/>
+                                            <input type="email"  name={'email'} placeholder="Enter your email"  value={this.state.email} onChange={(e) => this.changeHandler(e, 'email')} className="form-control bg-soft-light border-light"/>
                                             <div className="invalid-feedback d-block text-danger"></div>
                                         </div>
                                     </div>
@@ -132,7 +136,7 @@ export  class Register extends Component {
                                             <Icon icon="ant-design:lock-outlined" color="#9aa1b9" width="16" height="16" />
                                         </span>
                                             </div>
-                                            <input type="password" placeholder="Enter your password"  value={this.state.password} onChange={(e) => this.changeHandler(e, 'password')} className="form-control bg-soft-light border-light"/>
+                                            <input type="password"  name={'password'} placeholder="Enter your password"  value={this.state.password} onChange={(e) => this.changeHandler(e, 'password')} className="form-control bg-soft-light border-light"/>
                                             <div className="invalid-feedback d-block text-danger"></div>
                                         </div>
                                     </div>
